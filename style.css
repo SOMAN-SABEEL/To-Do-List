@@ -1,0 +1,231 @@
+:root {
+  --background: #101114;
+  --primary-color: #1c1d20;
+  --secondary-color: #4a4d57;
+  --accent-color: #00ffc4;
+  --text-color: #fff;
+  --secondaryBackground: #171c48;
+  --purple: #828dff;
+}
+.light-mode {
+  --background: #d3d3d3;
+  --primary-color: #f2f2f2;
+  --secondary-color: #4a4d57;
+  --accent-color: #27ae60;
+  --text-color: #333333;
+  --purple: #070b3b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16pt;
+  color: var(--text-color);
+}
+body {
+  min-height: 80vh;
+  padding: 10px;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 120px auto 50px auto;
+  justify-content: space-between;
+}
+.status-container {
+  padding: 30px;
+  display: flex;
+  color: var(--text-color);
+  border-radius: 20px;
+  border: 3px solid var(--purple);
+  gap: 50px;
+  width: 600px;
+}
+.details {
+  width: 100%;
+  font-size: 13pt;
+  position: relative;
+}
+.details>p{
+  font-weight: 600;
+}
+.icon {
+  position: absolute;
+  top: 6px;
+  right: 2px;
+}
+#progressBar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--secondaryBackground);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+#progress {
+  width: 0%;
+  height: 10px;
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+#numbers {
+  width: 100px;
+  height: 100px;
+  background-color: #171c48;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+}
+#icon {
+  width: 30px;
+  cursor: pointer;
+}
+.wrapper {
+  width: 700px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#todo-input {
+  box-sizing: border-box;
+  padding: 12px 20px;
+  width: 100%;
+  background: none;
+  border: 2px solid var(--secondary-color);
+  border-radius: 1000px;
+  font: inherit;
+  color: var(--text-color);
+}
+#todo-input:focus {
+  outline: none;
+}
+form {
+  position: relative;
+  box-sizing: border-box;
+}
+#add-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--accent-color);
+  height: 100%;
+  padding: 0 30px;
+  border: none;
+  border-radius: 1000px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--background);
+  cursor: pointer;
+}
+.todo {
+  margin-bottom: 10px;
+  padding: 0 16px;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+.todo .todo-text {
+  padding: 15px;
+  padding-right: 0;
+  color: var(--text-color);
+  font-weight: 500;
+  flex-grow: 1;
+  transition: 200ms ease;
+}
+.edit-button{
+  border: none;
+  background: none;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.edit-button svg{
+  transition: 200ms ease;
+}
+.delete-button {
+  padding: 3px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.delete-button svg {
+  transition: 200ms ease;
+}
+.delete-button:hover svg {
+  fill: #ff0033;
+}
+.edit-button:hover svg{
+  fill: #ff0033;
+}
+.custom-checkbox {
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  min-height: 20px;
+  min-width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: 200ms ease;
+}
+input[type="checkbox"]:checked ~ .custom-checkbox {
+  background-color: var(--accent-color);
+}
+input[type="checkbox"]:checked ~ .custom-checkbox svg {
+  fill: var(--primary-color);
+}
+input[type="checkbox"]:checked ~ .todo-text {
+  text-decoration: line-through;
+  color: var(--secondary-color);
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 12pt;
+  }
+  #add-button {
+    position: unset;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    height: auto;
+  }
+  .container {
+    margin: 80px auto 40px auto;
+  }
+  .status-container {
+    width: 360px;
+  }
+  .details {
+    font-size: 8pt;
+    position: static;
+  }
+  .icon {
+    top: 2rem;
+    right: 4rem;
+  }
+  #numbers {
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List App</title>
+    <link rel="shortcut icon" href="./icons/icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="status-container">
+        <div class="details">
+          <h1>To-Do List App</h1>
+          <p>Keep It Up</p>
+          <h1 class="icon"><img src="icons/sun.png" id="icon" /></h1>
+          <div id="progressBar">
+            <P id="progress"></P>
+          </div>
+        </div>
+        <div class="status-number">
+          <p id="numbers">0 / 0</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <form>
+        <input
+          id="todo-input"
+          type="text"
+          placeholder="write anything and hit enter to add"
+          maxlength="50"
+          autocomplete="off"
+        />
+        <button id="add-button">ADD</button>
+      </form>
+      <ul id="todo-List">
+      </ul>
+    </div>
+  </body>
+</html>
